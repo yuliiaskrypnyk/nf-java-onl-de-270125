@@ -3,7 +3,7 @@ public class Testing {
         int a = 1;
         int b = 2;
         System.out.println("add " + add(a, b));
-        System.out.println("isGerade " + isGerade(a));
+        System.out.println("isGerade " + isGerade(b));
         System.out.println("multiply " + multiply(a, b));
         System.out.println("toUpperCase " + toUpperCase("hello"));
         System.out.println("isPositive " + isPositive(a));

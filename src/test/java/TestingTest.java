@@ -9,7 +9,7 @@ class TestingTest {
 
     @Test
     void isGerade() {
-        assertTrue(Testing.isGerade(1));
+        assertTrue(Testing.isGerade(2));
     }
 
     @Test
