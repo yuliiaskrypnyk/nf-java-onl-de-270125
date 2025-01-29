@@ -7,6 +7,8 @@ public class Testing {
         System.out.println("multiply " + multiply(a, b));
         System.out.println("toUpperCase " + toUpperCase("hello"));
         System.out.println("isPositive " + isPositive(a));
+        //Bonus
+        System.out.println(validateHello("Hello Anna!"));
     }
 
     public static int add(int a, int b) {
@@ -28,4 +30,18 @@ public class Testing {
     public static boolean isPositive(int number) {
         return number > 0;
     }
+
+    //Bonus
+    public static boolean validateHello(String greetings) {
+        String[] validGreetings = {"hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc"};
+        greetings = greetings.toLowerCase();
+
+        for (String greeting : validGreetings) {
+            if (greetings.contains(greeting)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

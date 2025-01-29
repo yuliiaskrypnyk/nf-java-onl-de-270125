@@ -26,4 +26,18 @@ class TestingTest {
     void isPositive() {
         assertTrue(Testing.isPositive(1));
     }
+
+    @Test
+    void testBonus() {
+        assertTrue(Testing.validateHello("hello"));
+        assertTrue(Testing.validateHello("ciao bella!"));
+        assertTrue(Testing.validateHello("salut"));
+        assertTrue(Testing.validateHello("hallo, salut"));
+        assertTrue(Testing.validateHello("hombre! Hola!"));
+        assertTrue(Testing.validateHello("Hallo, wie gehts dir?"));
+        assertTrue(Testing.validateHello("AHOJ!"));
+        assertTrue(Testing.validateHello("czesc"));
+        assertTrue(Testing.validateHello("Ahoj"));
+        assertFalse(Testing.validateHello("meh"));
+    }
 }
