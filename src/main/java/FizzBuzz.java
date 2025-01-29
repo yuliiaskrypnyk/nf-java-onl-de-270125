@@ -1,5 +1,5 @@
 public class FizzBuzz {
     public static String answer(int person) {
-        return "1";
+        return String.valueOf(person);
     }
 }
