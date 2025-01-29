@@ -22,4 +22,14 @@ public class FizzBuzzTest {
         String expected = "2";
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void expeectFizz_whenPerson3() {
+        int person = 3;
+
+        String actual = FizzBuzz.answer(person);
+
+        String expected = "Fizz";
+        Assertions.assertEquals(expected, actual);
+    }
 }
