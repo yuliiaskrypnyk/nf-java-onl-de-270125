@@ -1,14 +1,44 @@
+import java.util.Arrays;
+
 public class Array {
     public static void main(String[] args) {
-        int[] numbers = new int[10];
-        numbers[0] = 1;
-        numbers[1] = 2;
-        numbers[2] = 3;
-        numbers[3] = 4;
-        numbers[4] = 5;
+        //erstes Array
+        System.out.println("Erstes Array: ");
+        int[] numbers1 = new int[10];
+        for (int i = 0; i < numbers1.length; i++) {
+            numbers1[i] = i + 1;
+        }
 
-        int[] numbers2 = {6, 7, 8, 9, 10};
+        int sum = 0;
+        for (int number : numbers1) {
+            System.out.print(number + " ");
+            sum += number;
+        }
+        System.out.println("\nSumme: " + sum);
 
-        System.out.println(numbers[2] + numbers[3]);
+        int max = Arrays.stream(numbers1).max().getAsInt();
+        System.out.println("Max number: " + max);
+
+        //zweites Array
+        System.out.println("Zweites Array: ");
+        int[] numbers2 = new int[10];
+        for (int i = 0; i < numbers2.length; i++) {
+            numbers2[i] = i + 11;
+        }
+
+        for (int number : numbers2) {
+            System.out.print(number + " ");
+        }
+
+        int[] result = new int[10];
+
+        for (int i = 0; i < numbers1.length; i++) {
+            result[i] = numbers1[i] + numbers2[i];
+        }
+
+        System.out.println("\nSum result: ");
+        for (int res : result) {
+           System.out.print(res + " ");
+        }
     }
 }
