@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Array {
     public static void main(String[] args) {
@@ -40,6 +41,17 @@ public class Array {
         System.out.println("\nSum result: ");
         for (int res : result) {
            System.out.print(res + " ");
+        }
+
+        //Scanner
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nEnter text: ");
+        String inputText = scanner.nextLine();
+
+        for (int i = 0; i < inputText.length(); i++) {
+            char letter = inputText.charAt(i);
+            System.out.println(letter);
         }
     }
 }
