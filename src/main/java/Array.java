@@ -9,6 +9,7 @@ public class Array {
             numbers1[i] = i + 1;
         }
 
+        //Summe
         int sum = 0;
         for (int number : numbers1) {
             System.out.print(number + " ");
@@ -30,8 +31,8 @@ public class Array {
             System.out.print(number + " ");
         }
 
+        //Sum result
         int[] result = new int[10];
-
         for (int i = 0; i < numbers1.length; i++) {
             result[i] = numbers1[i] + numbers2[i];
         }
