@@ -1,19 +1,29 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class FizzBuzzTest {
 
-    @Test
-    void expeect1_whenPerson1() {
-        int person = 1;
+    @ParameterizedTest
+    @CsvSource(
+        delimiter = '=',
+        value = {
+                "1=1",
+                "2=2",
+                "3=Fizz",
+                "4=4",
+                "5=Buzz",
+                "15=Fizz Buzz"
+        }
+    )
 
+    void test_answer(int person, String expected) {
         String actual = FizzBuzz.answer(person);
-
-        String expected = "1";
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
+/*    @Test
     void expeect2_whenPerson2() {
         int person = 2;
 
@@ -61,5 +71,5 @@ public class FizzBuzzTest {
 
         String expected = "Fizz Buzz";
         Assertions.assertEquals(expected, actual);
-    }
+    }*/
 }
