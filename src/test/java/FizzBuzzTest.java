@@ -52,4 +52,14 @@ public class FizzBuzzTest {
         String expected = "Buzz";
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void expeectFizzBuzz_whenPerson15() {
+        int person = 15;
+
+        String actual = FizzBuzz.answer(person);
+
+        String expected = "Fizz Buzz";
+        Assertions.assertEquals(expected, actual);
+    }
 }
