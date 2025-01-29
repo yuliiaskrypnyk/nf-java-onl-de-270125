@@ -33,13 +33,13 @@ public class Array {
         }
 
         //Sum result
-        int[] result = new int[10];
+        int[] results = new int[10];
         for (int i = 0; i < numbers1.length; i++) {
-            result[i] = numbers1[i] + numbers2[i];
+            results[i] = numbers1[i] + numbers2[i];
         }
 
         System.out.println("\nSum result: ");
-        for (int res : result) {
+        for (int res : results) {
            System.out.print(res + " ");
         }
 
