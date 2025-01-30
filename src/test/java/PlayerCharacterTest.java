@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -28,7 +27,7 @@ public class PlayerCharacterTest {
     @Test
     void move_ShouldReturn1_WhenW() {
         int actual = PlayerCharacter.move("W");
-        Assertions.assertEquals(1, actual);
+        assertEquals(1, actual);
     }
 
     @Test
