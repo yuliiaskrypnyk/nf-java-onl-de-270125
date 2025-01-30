@@ -24,7 +24,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    void expectFizz_whenGivenNumber() {
+    void expectFizz_whenGivenNumber3() {
         int number = 3;
         String actual = FizzBuzz.calculate(number);
         String expected = "Fizz";
