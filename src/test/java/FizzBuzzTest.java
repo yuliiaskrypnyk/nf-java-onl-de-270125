@@ -15,4 +15,12 @@ public class FizzBuzzTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void expect2_whenGivenNumber2() {
+        int number = 2;
+        String actual = FizzBuzz.calculate(number);
+        String expected = "2";
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
