@@ -1,18 +1,33 @@
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FizzBuzzTest {
+    @ParameterizedTest
+    @CsvSource(
+            delimiter = '=',
+            value = {
+                    "1=1",
+                    "2=2",
+                    "3=Fizz",
+                    "4=4",
+                    "5=Buzz",
+                    "15=FizzBuzz"
+            }
+    )
+    void test_calculate(int person, String expected) {
+        String actual = FizzBuzz.calculate(person);
+        assertEquals(expected, actual);
+    }
 
-    @Test
-    void expect1_whenGivenNumber1() {
-        // Given
-        int number = 1;
-        // When
+/*  @Test
+    void int number = 1;
         String actual = FizzBuzz.calculate(number);
-        // Then
         String expected = "1";
-
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -20,7 +35,7 @@ public class FizzBuzzTest {
         int number = 2;
         String actual = FizzBuzz.calculate(number);
         String expected = "2";
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -28,7 +43,7 @@ public class FizzBuzzTest {
         int number = 3;
         String actual = FizzBuzz.calculate(number);
         String expected = "Fizz";
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -36,7 +51,7 @@ public class FizzBuzzTest {
         int number = 4;
         String actual = FizzBuzz.calculate(number);
         String expected = "4";
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -44,7 +59,7 @@ public class FizzBuzzTest {
         int number = 5;
         String actual = FizzBuzz.calculate(number);
         String expected = "Buzz";
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -52,7 +67,7 @@ public class FizzBuzzTest {
         int number = 6;
         String actual = FizzBuzz.calculate(number);
         String expected = "Fizz";
-        Assertions.assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -60,6 +75,6 @@ public class FizzBuzzTest {
         int number = 15;
         String actual = FizzBuzz.calculate(number);
         String expected = "FizzBuzz";
-        Assertions.assertEquals(expected, actual);
-    }
+        assertEquals(expected, actual);
+    }*/
 }

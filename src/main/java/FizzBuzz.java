@@ -1,6 +1,6 @@
 public class FizzBuzz {
     public static String calculate(int number) {
-        if (number % 15 == 0) {
+        if (number % 3 == 0 && number % 5 == 0) {
             return "FizzBuzz";
         }
 
@@ -12,6 +12,6 @@ public class FizzBuzz {
             return "Buzz";
         }
 
-        return  String.valueOf(number);
+        return String.valueOf(number);
     }
 }
