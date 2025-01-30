@@ -24,6 +24,30 @@ public class FizzBuzzTest {
     }
 
     @Test
+    void expectFizz_whenGivenNumber() {
+        int number = 3;
+        String actual = FizzBuzz.calculate(number);
+        String expected = "Fizz";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void expect4_whenGivenNumber4() {
+        int number = 4;
+        String actual = FizzBuzz.calculate(number);
+        String expected = "4";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void expectBuzz_whenGivenNumber5() {
+        int number = 5;
+        String actual = FizzBuzz.calculate(number);
+        String expected = "Buzz";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     void expectFizz_whenGivenNumber6() {
         int number = 6;
         String actual = FizzBuzz.calculate(number);
