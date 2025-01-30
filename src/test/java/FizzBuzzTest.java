@@ -20,7 +20,14 @@ public class FizzBuzzTest {
         int number = 2;
         String actual = FizzBuzz.calculate(number);
         String expected = "2";
+        Assertions.assertEquals(expected, actual);
+    }
 
+    @Test
+    void expectFizz_whenGivenNumber6() {
+        int number = 6;
+        String actual = FizzBuzz.calculate(number);
+        String expected = "Fizz";
         Assertions.assertEquals(expected, actual);
     }
 }
