@@ -5,7 +5,7 @@ public class CarRunner {
         testCar1.accelerateCar(20);
         testCar1.displaySpeed();
 
-        Car testCar2 = new Car("Mercedes-Benz","E-Class", "white", 2015);
+        Car testCar2 = new Car("Mercedes-Benz","E-Class", "White", 2015);
         testCar2.startCar();
         testCar2.accelerateCar(50);
         testCar2.displaySpeed();
