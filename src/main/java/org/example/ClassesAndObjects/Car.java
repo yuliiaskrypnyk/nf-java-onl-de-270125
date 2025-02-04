@@ -1,4 +1,4 @@
-package ClassesAndObjects;
+package org.example.ClassesAndObjects;
 
 public class Car {
     String brand;

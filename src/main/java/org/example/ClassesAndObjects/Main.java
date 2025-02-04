@@ -1,4 +1,4 @@
-package ClassesAndObjects;
+package org.example.ClassesAndObjects;
 
 public class Main {
     public static void main(String[] args) {

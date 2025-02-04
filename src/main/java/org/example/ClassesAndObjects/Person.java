@@ -1,4 +1,4 @@
-package ClassesAndObjects;
+package org.example.ClassesAndObjects;
 
 public class Person {
     String name;
@@ -13,5 +13,7 @@ public class Person {
 
     public void introduceText() {
         System.out.println("Hello, I am " + name + " and " + age + " years old.");
+        //String.format("Hello, I'm %s. My gender is %s, and I'm %d years old.", name, gender, age)
+        //System.out.printf("Hello, I'm %s. My gender is %s, and I'm %d years old.%n", name, gender, age);
     }
 }
