@@ -8,7 +8,7 @@ public class Main {
         Car car = new Car("Mercedes-Benz","E-Class", 2015, 2);
         car.displayCarInfo();
 
-        Motorcycle motorcycle = new Motorcycle("Harley-Davidson", "Sport", 2010, "Cruiser", 1000);
+        Motorcycle motorcycle = new Motorcycle("Harley-Davidson", "Sportster", 2010, "Cruiser", 1000);
         motorcycle.displayMotorcycleInfo();
     }
 }

@@ -1,7 +1,7 @@
 package org.example.Inheritance;
 
 public class Car extends Vehicle {
-    private int numberOfDoor;
+    protected int numberOfDoor;
 
     public Car(String model, String manufacturer, int yearOfManufacture, int numberOfDoor) {
         super(model, manufacturer, yearOfManufacture);
@@ -9,7 +9,7 @@ public class Car extends Vehicle {
     }
 
     public void displayCarInfo() {
-        displayInfo();
+        super.displayInfo();
         System.out.println("Number of Door: " + numberOfDoor);
     }
 }
