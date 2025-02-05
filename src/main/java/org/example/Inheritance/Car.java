@@ -10,7 +10,7 @@ public class Car extends Vehicle {
 
     public void displayCarInfo() {
         displayInfo();
-        System.out.print("; Number of Door: " + numberOfDoor);
+        System.out.println("Number of Door: " + numberOfDoor);
     }
 }
 

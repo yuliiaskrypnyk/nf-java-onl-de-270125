@@ -12,6 +12,6 @@ public class Vehicle {
     }
 
     public void displayInfo() {
-        System.out.print("Model: " + model + "; Manufacturer: " + manufacturer + "; Year of Manufacture: " + yearOfManufacture);
+        System.out.println("Model: " + model + "; Manufacturer: " + manufacturer + "; Year of Manufacture: " + yearOfManufacture);
     }
 }
