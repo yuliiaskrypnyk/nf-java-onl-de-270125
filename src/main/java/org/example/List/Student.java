@@ -11,6 +11,10 @@ public class Student {
         this.studentId = studentId;
     }
 
+    public int getStudentId() {
+        return studentId;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
