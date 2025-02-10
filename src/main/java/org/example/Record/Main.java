@@ -1,5 +1,8 @@
 package org.example.Record;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Owner owner1 = new Owner("Maryna", 31, "Street 1");
@@ -19,5 +22,13 @@ public class Main {
         System.out.println(cat.species());
 
         System.out.println(dog);
+
+        List<Animal> animals = new ArrayList<>();
+        animals.add(dog);
+        animals.add(cat);
+
+        Zoo zoo = new Zoo(animals);
+        int totalFoodRequirement = zoo.calculateTotalFoodRequirement();
+        System.out.println(totalFoodRequirement);
     }
 }
