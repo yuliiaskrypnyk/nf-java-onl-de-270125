@@ -6,11 +6,12 @@ import java.util.List;
 
 public class ShopService {
     private final ProductRepo productRepo;
-    private final OrderListRepo orderListRepo;
+//    private final OrderListRepo orderListRepo;
+    private final OrderRepo orderRepo;
 
-    public ShopService(ProductRepo productRepo, OrderListRepo orderListRepo) {
+    public ShopService(ProductRepo productRepo, OrderRepo orderRepo) {
         this.productRepo = productRepo;
-        this.orderListRepo = orderListRepo;
+        this.orderRepo = orderRepo;
     }
 
     public void placeOrder(int customerId, List<Integer> productIds) {
@@ -27,8 +28,8 @@ public class ShopService {
             totalPrice += product.price();
         }
 
-        Order newOrder = new Order(orderListRepo.getAllOrders().size() + 1, customerId, orderProducts, totalPrice, LocalDateTime.now(), "Pending");
-        orderListRepo.addOrder(newOrder);
+        Order newOrder = new Order(orderRepo.getAllOrders().size() + 1, customerId, orderProducts, totalPrice, LocalDateTime.now(), "Pending");
+        orderRepo.addOrder(newOrder);
         System.out.println("Order placed successfully: " + newOrder);
     }
 }
