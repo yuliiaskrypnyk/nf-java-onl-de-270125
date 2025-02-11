@@ -1,13 +1,14 @@
 package org.example.ProductRepo;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         ProductRepo productRepo = new ProductRepo();
-        productRepo.addProduct(new Product(1, "Laptop", 2000));
-        productRepo.addProduct(new Product(2, "Phone", 1000));
-        productRepo.addProduct(new Product(3, "Mouse", 100));
+        productRepo.addProduct(new Product(1, "Laptop", new BigDecimal("2000")));
+        productRepo.addProduct(new Product(2, "Phone", new BigDecimal("1000")));
+        productRepo.addProduct(new Product(3, "Mouse", new BigDecimal("100")));
 
 /*        OrderListRepo orderListRepo = new OrderListRepo();
 

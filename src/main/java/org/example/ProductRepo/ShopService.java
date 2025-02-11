@@ -1,5 +1,6 @@
 package org.example.ProductRepo;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,6 @@ public class ShopService {
 
     public void placeOrder(int customerId, List<Integer> productIds) {
         List<Product> orderProducts = new ArrayList<>();
-        double totalPrice = 0.0;
 
         for (Integer productId : productIds) {
             Product product = productRepo.getProductById(productId);
@@ -27,10 +27,15 @@ public class ShopService {
                 return;
             }
             orderProducts.add(product);
-            totalPrice += product.price();
         }
 
-        Order newOrder = new Order(orderRepo.getAllOrders().size() + 1, customerId, orderProducts, totalPrice, LocalDateTime.now(), "Pending");
+        int newOrderId = orderRepo.getAllOrders().size() + 1;
+        //Order newOrder = new Order(orderRepo.getAllOrders().size() + 1, customerId, orderProducts, totalPrice, LocalDateTime.now(), "Pending");
+
+        BigDecimal totalPrice = new Order(newOrderId, customerId, orderProducts, BigDecimal.ZERO, LocalDateTime.now(), "Pending").calculateTotalPrice();
+
+        Order newOrder = new Order(newOrderId, customerId, orderProducts, totalPrice, LocalDateTime.now(), "Pending");
+
         orderRepo.addOrder(newOrder);
         cli.printSuccess("Order placed successfully:");
         System.out.println(newOrder);
