@@ -1,27 +1,34 @@
 package org.example.ProductRepo;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Map<Integer, Product> products = new HashMap<>();
-        products.put(1, new Product(1, "Laptop", 2000));
-        products.put(2, new Product(2, "Phone", 1000));
-
-        ProductRepo productRepo = new ProductRepo(products);
-
-        System.out.println(productRepo.getProducts());
-        System.out.println(productRepo.getProductById(1));
-
+        ProductRepo productRepo = new ProductRepo();
+        productRepo.addProduct(new Product(1, "Laptop", 2000));
+        productRepo.addProduct(new Product(2, "Phone", 1000));
         productRepo.addProduct(new Product(3, "Mouse", 100));
 
-        System.out.println(productRepo.getProducts());
-        System.out.println(productRepo.getProductById(3));
+        OrderListRepo orderListRepo = new OrderListRepo();
 
-        productRepo.removeProduct(3);
+        ShopService shopService = new ShopService(productRepo, orderListRepo);
 
-        System.out.println(productRepo.getProducts());
-        System.out.println(productRepo.getProductById(3));
+        List<Integer> order1 = List.of(1, 3);
+        shopService.placeOrder(1, order1);
+
+        List<Integer> order2 = List.of(2);
+        shopService.placeOrder(2, order2);
+
+        productRepo.removeProduct(2);
+
+        List<Integer> order3 = List.of(2);
+        shopService.placeOrder(3, order3);
+
+        orderListRepo.removeOrder(1);
+
+        orderListRepo.printAllOrders();
+
+        orderListRepo.getOrderById(2);
+        orderListRepo.getOrderById(0);
     }
 }

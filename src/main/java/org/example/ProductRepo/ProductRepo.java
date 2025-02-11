@@ -6,8 +6,8 @@ import java.util.Map;
 public class ProductRepo {
     private final Map<Integer, Product> productMap;
 
-    public ProductRepo(Map<Integer, Product> products) {
-        this.productMap = new HashMap<>(products);
+    public ProductRepo() {
+        this.productMap = new HashMap<>();
     }
 
     public void addProduct(Product product) {
@@ -24,6 +24,5 @@ public class ProductRepo {
 
     public Map<Integer, Product> getProducts() {
         return new HashMap<>(productMap);
-//        return productMap;
     }
 }
