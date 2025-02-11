@@ -6,24 +6,26 @@ import java.util.Map;
 
 public class OrderMapRepo implements OrderRepo {
     private final Map<Integer, Order> ordersMap;
+    private final CLI cli;
 
     public OrderMapRepo() {
         this.ordersMap = new HashMap<>();
+        this.cli = new CLI();
     }
 
     @Override
     public void addOrder(Order order) {
         ordersMap.put(order.id(), order);
-        System.out.println("Order with ID " + order.id() + " added.");
+        cli.printSuccess("Order with ID " + order.id() + " added.");
     }
 
     @Override
     public void removeOrder(int orderId) {
         if (ordersMap.containsKey(orderId)) {
             ordersMap.remove(orderId);
-            System.out.println("Order with ID " + orderId + " removed.");
+            cli.printSuccess("Order with ID " + orderId + " removed.");
         } else {
-            System.out.println("Order with ID " + orderId + " does not exist.");
+            cli.printError("Order with ID " + orderId + " does not exist.");
         }
     }
 
@@ -40,9 +42,9 @@ public class OrderMapRepo implements OrderRepo {
     @Override
     public void printAllOrders() {
         if (ordersMap.isEmpty()) {
-            System.out.println("No orders available.");
+            cli.printInfo("No orders available.");
         } else {
-            System.out.println("All Orders:");
+            cli.printInfo("All Orders:");
             for (Order order : ordersMap.values()) {
                 System.out.println(order);
             }

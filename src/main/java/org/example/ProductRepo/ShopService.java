@@ -6,12 +6,14 @@ import java.util.List;
 
 public class ShopService {
     private final ProductRepo productRepo;
-//    private final OrderListRepo orderListRepo;
+    //    private final OrderListRepo orderListRepo;
     private final OrderRepo orderRepo;
+    private final CLI cli;
 
     public ShopService(ProductRepo productRepo, OrderRepo orderRepo) {
         this.productRepo = productRepo;
         this.orderRepo = orderRepo;
+        this.cli = new CLI();
     }
 
     public void placeOrder(int customerId, List<Integer> productIds) {
@@ -21,7 +23,7 @@ public class ShopService {
         for (Integer productId : productIds) {
             Product product = productRepo.getProductById(productId);
             if (product == null) {
-                System.out.println("Product with ID " + productId + " does not exist!");
+                cli.printError("Product with ID " + productId + " does not exist!");
                 return;
             }
             orderProducts.add(product);
@@ -30,6 +32,7 @@ public class ShopService {
 
         Order newOrder = new Order(orderRepo.getAllOrders().size() + 1, customerId, orderProducts, totalPrice, LocalDateTime.now(), "Pending");
         orderRepo.addOrder(newOrder);
-        System.out.println("Order placed successfully: " + newOrder);
+        cli.printSuccess("Order placed successfully:");
+        System.out.println(newOrder);
     }
 }
