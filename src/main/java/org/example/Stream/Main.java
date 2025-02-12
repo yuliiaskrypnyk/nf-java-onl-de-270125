@@ -36,12 +36,11 @@ public class Main {
 
         Path filePath = Path.of("students.csv");
 
-        try {
-            Files.lines(filePath)
-                    .skip(1)
+        try (Stream<String> lines = Files.lines(filePath)) {
+            lines.skip(1)
                     .forEach(System.out::println);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("An error occurred while reading the file: " + e.getMessage());
         }
 
         try (Stream<String> lines = Files.lines(filePath)) {
@@ -62,7 +61,7 @@ public class Main {
             students.forEach(System.out::println);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("An error occurred while reading the file: " + e.getMessage());
         }
     }
 }
