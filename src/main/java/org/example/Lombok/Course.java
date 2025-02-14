@@ -4,14 +4,10 @@ import lombok.*;
 
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@With
+@Value
 public class Course {
-    private int id;
-    private String name;
-    private Teacher teacher;
-    private List<Student> students;
+    int id;
+    String name;
+    Teacher teacher;
+    List<Student> students;
 }
