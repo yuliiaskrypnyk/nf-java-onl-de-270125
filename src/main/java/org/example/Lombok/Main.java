@@ -34,11 +34,11 @@ public class Main {
 
         System.out.println(student4);
 
-        Student newNameStudent = student1.withName("Bob New");
+/*        Student newNameStudent = student1.withName("Bob New");
         System.out.println(newNameStudent.getName());
 
         Student newAddressStudent = student1.withAddress("Street 90");
-        System.out.println(newAddressStudent.getAddress());
+        System.out.println(newAddressStudent.getAddress());*/
 
         University university = new University(1, "University Name", List.of(course));
         System.out.println(university);
