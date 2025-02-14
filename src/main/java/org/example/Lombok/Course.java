@@ -4,7 +4,10 @@ import lombok.*;
 
 import java.util.List;
 
-@Value
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Course {
     int id;
     String name;

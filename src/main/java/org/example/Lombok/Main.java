@@ -1,7 +1,6 @@
 package org.example.Lombok;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,23 +33,10 @@ public class Main {
 
         System.out.println(student4);
 
-/*        Student newNameStudent = student1.withName("Bob New");
+        Student newNameStudent = student1.withName("Bob New");
         System.out.println(newNameStudent.getName());
 
         Student newAddressStudent = student1.withAddress("Street 90");
-        System.out.println(newAddressStudent.getAddress());*/
-
-        University university = new University(1, "University Name", List.of(course));
-        System.out.println(university);
-
-        UniversityService universityService = new UniversityService();
-        double courseAverage = universityService.calculateAverageGradeOfCourse(course);
-        System.out.println("courseAverage: " + courseAverage);
-
-        double universityAverage = universityService.calculateAverageGradeOfUniversity(university);
-        System.out.println("universityAverage: " + universityAverage);
-
-        List<Student> goodStudents = universityService.getStudentsWithMinimumGrade(university, 2.0);
-        System.out.println("goodStudents: " + goodStudents);
+        System.out.println(newAddressStudent.getAddress());
     }
 }
