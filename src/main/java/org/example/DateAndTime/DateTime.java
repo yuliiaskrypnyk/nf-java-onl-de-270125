@@ -29,7 +29,7 @@ public class DateTime {
             System.out.println("Current date is the same as the future date.");
         }
 
-        LocalDate date1 = LocalDate.of(2025,2,17);
+        LocalDate date1 = LocalDate.of(2025, 2, 17);
         LocalDate date2 = LocalDate.of(2025, 3, 3);
 
         long days = ChronoUnit.DAYS.between(date1, date2);
